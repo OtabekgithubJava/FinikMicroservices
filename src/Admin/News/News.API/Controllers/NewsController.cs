@@ -34,7 +34,7 @@ namespace News.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetNewsByCategory([FromBody] string category)
+        public async Task<IActionResult> GetNewsByCategory(string category)
         {
             try
             {
@@ -71,6 +71,13 @@ namespace News.API.Controllers
             var result = await mediator.Send(command);
 
             return Ok(result);
+        }
+        
+        [HttpPut]
+        public async Task<ResponseModel> AddAttachment(CreateNewsCommand request)
+        {
+            var res = await mediator.Send(request);
+            return res;
         }
     }
 }
