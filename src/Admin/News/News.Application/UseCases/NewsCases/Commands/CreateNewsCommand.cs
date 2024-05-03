@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using News.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace News.Application.UseCases.NewsCases.Commands
 {
@@ -11,5 +12,6 @@ namespace News.Application.UseCases.NewsCases.Commands
         public string PostedDate { get; set; }
         public string NewsTitle { get; set; }
         public string NewsBody { get; set; }
+        public IFormFile AddAttachment { get; set; }
     }
 }
